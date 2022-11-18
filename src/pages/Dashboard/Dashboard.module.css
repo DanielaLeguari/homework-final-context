@@ -1,0 +1,75 @@
+main {
+  width: 80%;
+  height: 100vh;
+}
+
+main h1 {
+  text-transform: uppercase;
+  padding-left: 15px;
+  font-weight: 600;
+}
+
+.container {
+  max-height: 80%;
+  margin: 50px 100px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  padding: 20px 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.content div button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.content div button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.content div, .content span {
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.container::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 20px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  width: 18px;
+  background-color: #2A3042;
+  border-radius: 20px;
+  border: solid 3px #f8f8ff;
+}
