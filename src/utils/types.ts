@@ -59,3 +59,22 @@ export type TAddress = {
 export interface TAddressData extends TAddress {
   idPessoa: number
 }
+
+// Tipos Contacts Context
+
+export type TContactsContext = {
+  getContacts: () => Promise<void>,
+  contactsList: TContactsData[],
+  totalPages: number
+}
+
+export type TContacts = {
+  idPessoa: number
+  tipoContato: string,
+  telefone: string,
+  descricao: string,
+}
+
+export interface TContactsData extends TContacts {
+  idContato: number
+}

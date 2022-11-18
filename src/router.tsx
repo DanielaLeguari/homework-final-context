@@ -21,6 +21,7 @@ import UpdateAddress from './pages/UpdateAddress/UpdateAddress'
 import CreateContacts from './pages/CreateContacts/CreateContacts'
 import UpdateContacts from './pages/UpdateContacts/UpdateContacts'
 import { AddressProvider } from './context/AddressContext'
+import { ContactsProvider } from './context/ContactContext'
 
 export const PrivateRoute = () => {
   const { token } = useContext(AuthContext);
@@ -35,6 +36,7 @@ export const Router = () => {
         <AuthProvider>
           <PersonProvider>
           <AddressProvider>
+          <ContactsProvider>
             <Routes>
               <Route index element={<SignIn />} />
               <Route path='/signup' element={<SignUp />} />
@@ -52,6 +54,7 @@ export const Router = () => {
                 <Route path='/contact/update' element={<UpdateContacts />} />
               </Route>
             </Routes>
+          </ContactsProvider>  
           </AddressProvider>
           </PersonProvider>
         </AuthProvider>
