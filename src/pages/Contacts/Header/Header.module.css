@@ -1,0 +1,42 @@
+.header {
+  padding: 0 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header button {
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  background-color: #007BFF;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.roles {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2A3042;
+  color: #fff;
+  font-weight: 700;
+  padding: 20px 15px;
+}
+
+.roles span {
+  width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}

@@ -1,11 +1,13 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Aside from '../../components/Aside/Aside';
-import Header from '../Dashboard/Header/Header';
 import { ContactsContext } from '../../context/ContactContext';
-import styles from './Contacts.module.css';
-import deleteIcon from '../../assets/delete-icon.svg';
+
 import edit from '../../assets/edit-icon.svg';
+import deleteIcon from '../../assets/delete-icon.svg';
+
+import styles from './Contacts.module.css';
+import Header from './Header/Header';
+import Aside from '../../components/Aside/Aside';
 
 
 const Contacts = () => {

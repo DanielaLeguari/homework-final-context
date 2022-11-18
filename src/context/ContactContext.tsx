@@ -26,6 +26,8 @@ export const ContactsProvider = ({ children }: TChildren) => {
     }
   };
 
+  
+
   return (
     <ContactsContext.Provider value={{ getContacts, contactsList, totalPages }}>
       {children}
