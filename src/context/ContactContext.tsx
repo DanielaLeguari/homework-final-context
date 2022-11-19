@@ -39,8 +39,8 @@ export const ContactsProvider = ({ children }: TChildren) => {
       contact.tipoContato = contact.tipoContato.toUpperCase();
       contact.idPessoa = state;
       console.log(contact)
-      await API.post("/contato", state);
-      toast.success("Pessoa cadastrada com sucesso!", toastConfig);
+      await API.post(`/contato/${state}`, contact);
+      toast.success("Contato cadastrada com sucesso!", toastConfig);
       navigate("/contacts");
     } catch (error) {
         console.log(error)
