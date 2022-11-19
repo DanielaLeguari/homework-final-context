@@ -39,7 +39,7 @@ export const ContactsProvider = ({ children }: TChildren) => {
       contact.tipoContato = contact.tipoContato.toUpperCase();
       contact.idPessoa = state;
       console.log(contact)
-      await API.post("/contato", contact.idPessoa);
+      await API.post("/contato", state);
       toast.success("Pessoa cadastrada com sucesso!", toastConfig);
       navigate("/contacts");
     } catch (error) {
@@ -64,11 +64,12 @@ export const ContactsProvider = ({ children }: TChildren) => {
     }
   }
 
-  const updateContact = async (idContato: number, people: TContacts) => {
+  const updateContact = async (idContato: number, data: TContacts) => {
     try {
       nProgress.start();
       API.defaults.headers.common["Authorization"] = token;
-      await API.put(`/contato/${idContato}`, people);
+      data.tipoContato = data.tipoContato.toUpperCase();
+      await API.put(`/contato/${idContato}`, data);
       toast.success('Dados atualizados com sucesso!', toastConfig);
       navigate('/contacts');
     } catch (error) {

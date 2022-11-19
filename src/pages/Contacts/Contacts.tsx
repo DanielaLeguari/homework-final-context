@@ -18,6 +18,7 @@ const Contacts = () => {
     getContacts();
   }, [])
 
+
   return (
     <><Aside />
     <main>

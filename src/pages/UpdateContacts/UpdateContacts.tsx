@@ -20,7 +20,7 @@ const UpdateContacts = () => {
   return (
     <>
     <Aside />
-    <form className={styles.form} onSubmit={handleSubmit((data: TContacts) => updateContact(state.idPessoa, data))}>
+    <form className={styles.form} onSubmit={handleSubmit((data: TContacts) => updateContact(state.idContato, data))}>
       <div className={styles.container}>
       <h2>Cadastrar novo Contato</h2>
 

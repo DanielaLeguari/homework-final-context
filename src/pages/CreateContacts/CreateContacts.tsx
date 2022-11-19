@@ -17,7 +17,6 @@ const CreateContacts = () => {
   });
 
   const { state } = useLocation();
-  console.log(state);
 
   const { createContact } = useContext(ContactsContext);
 
