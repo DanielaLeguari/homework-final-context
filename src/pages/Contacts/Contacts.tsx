@@ -12,7 +12,7 @@ import Aside from '../../components/Aside/Aside';
 
 const Contacts = () => {
   const navigate = useNavigate();
-  const { contactsList, getContacts } = useContext(ContactsContext);
+  const { contactsList, getContacts, deleteContact } = useContext(ContactsContext);
 
   useEffect(()=>{
     getContacts();
@@ -32,7 +32,7 @@ const Contacts = () => {
               <div>
                 <button onClick={() => { navigate('contact/update', { state: contact }) }}><img src={edit} alt="Edit Icon" /></button>
                 
-                <button><img src={deleteIcon} alt="Delete Icon" /></button>
+                <button onClick={() => deleteContact(contact.idContato)}><img src={deleteIcon} alt="Delete Icon" /></button>
               </div>
             </div>
           ))}
