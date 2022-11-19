@@ -30,7 +30,7 @@ const Contacts = () => {
               <span>{contact.telefone}</span>
               <span>{contact.descricao}</span>
               <div>
-                <button onClick={() => { navigate('/contact/update') }}><img src={edit} alt="Edit Icon" /></button>
+                <button onClick={() => { navigate('/contact/update', { state: contact }) }}><img src={edit} alt="Edit Icon" /></button>
                 
                 <button onClick={() => deleteContact(contact.idContato)}><img src={deleteIcon} alt="Delete Icon" /></button>
               </div>
