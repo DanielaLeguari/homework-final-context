@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <div className={styles.header}>
         <h2>Pessoas cadastradas</h2>
-        <Link to={'/person/create'}><button>Adicionar pessoas</button></Link>
+        <Link to={'/person/create'}><button>Adicionar pessoa</button></Link>
       </div>
       <div className={styles.roles}>
         <span>Nome</span>

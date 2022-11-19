@@ -25,7 +25,7 @@ const UpdateContacts = () => {
         <h2>Atualizar contato</h2>
 
         <div>
-          <label htmlFor="tipoContato"><span>*</span> Tipo do Contato:</label>
+          <label htmlFor="tipoContato"><span>*</span>Tipo do contato:</label>
           <select defaultValue={state.tipoContato} id="tipoContato" {...register("tipoContato")}>
             <option value="RESIDENCIAL">Residencial</option>
             <option value="COMERCIAL">Comercial</option>
@@ -34,13 +34,13 @@ const UpdateContacts = () => {
         </div>
 
         <div>
-        <label htmlFor="telefone"><span>*</span> Telefone:</label>
+        <label htmlFor="telefone"><span>*</span>Telefone:</label>
           <InputMask mask="(99)99999-9999" defaultValue={state.telefone} type="text" id="telefone" {...register("telefone")} />
           {errors.telefone && <span>{errors.telefone.message}</span>}
         </div>
 
         <div>
-          <label htmlFor="descricao"><span>*</span> Descrição:</label>
+          <label htmlFor="descricao"><span>*</span>Descrição:</label>
           <input type="text" defaultValue={state.descricao} id="descricao" {...register("descricao")} />
           {errors.descricao && <span>{errors.descricao.message}</span>}
         </div>

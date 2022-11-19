@@ -37,13 +37,13 @@ const CreateAddress = () => {
           <input type="hidden" id="idPessoa" defaultValue={state} {...register("idPessoa")} />
 
           <div>
-            <label htmlFor="cep"><span>*</span> CEP:</label>
+            <label htmlFor="cep"><span>*</span>CEP:</label>
             <InputMask mask="99999-999" type="text" id="cep" {...register("cep")} onBlur={() => getAddressByCep(cep)} />
             {errors.cep && <span>{errors.cep.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="tipo"><span>*</span> Tipo do endereço:</label>
+            <label htmlFor="tipo"><span>*</span>Tipo do endereço:</label>
             <select id="tipo" {...register("tipo")}>
               <option value="RESIDENCIAL">Residencial</option>
               <option value="COMERCIAL">Comercial</option>
@@ -52,37 +52,37 @@ const CreateAddress = () => {
           </div>
 
           <div>
-            <label htmlFor="logradouro"><span>*</span> Logradouro:</label>
+            <label htmlFor="logradouro"><span>*</span>Logradouro:</label>
             <input type="text" id="logradouro" {...register("logradouro")} />
             {errors.logradouro && <span>{errors.logradouro.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="numero"><span>*</span> Número:</label>
+            <label htmlFor="numero"><span>*</span>Número:</label>
             <input type="number" id="numero" {...register("numero")} />
             {errors.numero && <span>{errors.numero.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="complemento"><span>*</span> Complemento:</label>
+            <label htmlFor="complemento"><span>*</span>Complemento:</label>
             <input type="text" id="complemento" {...register("complemento")} />
             {errors.complemento && <span>{errors.complemento.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="cidade"><span>*</span> Cidade:</label>
+            <label htmlFor="cidade"><span>*</span>Cidade:</label>
             <input type="text" id="cidade" {...register("cidade")} />
             {errors.cidade && <span>{errors.cidade.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="estado"><span>*</span> Estado:</label>
+            <label htmlFor="estado"><span>*</span>Estado:</label>
             <input type="text" id="estado" {...register("estado")} />
             {errors.estado && <span>{errors.estado.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="pais"><span>*</span> País:</label>
+            <label htmlFor="pais"><span>*</span>País:</label>
             <input type="text" id="pais" defaultValue="Brasil" {...register("pais")} />
             {errors.pais && <span>{errors.pais.message}</span>}
           </div>

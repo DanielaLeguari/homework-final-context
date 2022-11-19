@@ -25,24 +25,24 @@ const UpdatePerson = () => {
           <h2>Atualizar dados</h2>
 
           <div>
-            <label htmlFor="nome"><span>*</span> Nome:</label>
+            <label htmlFor="nome"><span>*</span>Nome:</label>
             <input type="text" defaultValue={state.nome} id="nome" {...register("nome")} />
             {errors.nome && <span>{errors.nome.message}</span>}
           </div>
 
           <div>
-          <label htmlFor="dataNascimento"><span>*</span> Data de Nascimento:</label>
+          <label htmlFor="dataNascimento"><span>*</span>Data de Nascimento:</label>
             <input type="date" defaultValue={state.dataNascimento} id="dataNascimento" {...register("dataNascimento")} />
             {errors.dataNascimento && <span>{errors.dataNascimento.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="cpf"><span>*</span> CPF:</label>
+            <label htmlFor="cpf"><span>*</span>CPF:</label>
             <InputMask mask="999.999.999-99" type="text" disabled value={state.cpf} id="cpf" {...register("cpf")} />
           </div>
 
           <div>
-            <label htmlFor="email"><span>*</span> E-mail:</label>
+            <label htmlFor="email"><span>*</span>E-mail:</label>
             <input type="text" defaultValue={state.email} id="email" {...register("email")} />
             {errors.email && <span>{errors.email.message}</span>}
           </div>

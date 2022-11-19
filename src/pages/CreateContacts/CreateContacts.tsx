@@ -26,7 +26,7 @@ const CreateContacts = () => {
         <h2>Cadastrar novo contato</h2>
 
         <div>
-          <label htmlFor="tipoContato"><span>*</span> Tipo do Contato:</label>
+          <label htmlFor="tipoContato"><span>*</span>Tipo do contato:</label>
           <select id="tipoContato" {...register("tipoContato")}>
             <option value="RESIDENCIAL">Residencial</option>
             <option value="COMERCIAL">Comercial</option>
@@ -35,13 +35,13 @@ const CreateContacts = () => {
         </div>
 
         <div>
-        <label htmlFor="telefone"><span>*</span> Telefone:</label>
+        <label htmlFor="telefone"><span>*</span>Telefone:</label>
           <InputMask mask="(99)99999-9999" type="text" id="telefone" {...register("telefone")} />
           {errors.telefone && <span>{errors.telefone.message}</span>}
         </div>
 
         <div>
-          <label htmlFor="descricao"><span>*</span> Descrição:</label>
+          <label htmlFor="descricao"><span>*</span>Descrição:</label>
           <input type="text" id="descricao" {...register("descricao")} />
           {errors.descricao && <span>{errors.descricao.message}</span>}
         </div>
