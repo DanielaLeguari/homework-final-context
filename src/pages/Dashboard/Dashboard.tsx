@@ -26,22 +26,22 @@ const Dashboard = () => {
         <div className={styles.container}>
           <Header />
           {people.map((person) => (
-              <div key={person.idPessoa} className={styles.content}>
-                <span>{person.nome}</span>
-                <span>{person.dataNascimento.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1')}</span>
-                <span>{person.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</span>
-                <span>{person.email}</span>
-                <div>
-                  <button onClick={() => { navigate('/address/create', { state: person.idPessoa }) }}><img src={locationIcon} alt="Location Icon" /></button>
+            <div key={person.idPessoa} className={styles.content}>
+              <span>{person.nome}</span>
+              <span>{person.dataNascimento.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1')}</span>
+              <span>{person.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</span>
+              <span>{person.email}</span>
+              <div>
+                <button onClick={() => { navigate('/address/create', { state: person.idPessoa }) }}><img src={locationIcon} alt="Location Icon" /></button>
 
-                  <button onClick={() => { navigate('/contact/create', { state: person.idPessoa }) }}><img src={contactIcon} alt="Contact Icon" /></button>
+                <button onClick={() => { navigate('/contact/create', { state: person.idPessoa }) }}><img src={contactIcon} alt="Contact Icon" /></button>
 
-                  <button onClick={() => { navigate('/person/update', { state: person }) }}><img src={edit} alt="Edit Icon" /></button>
-                  
-                  <button onClick={() => deletePerson(person.idPessoa)}><img src={deleteIcon} alt="Delete Icon" /></button>
-                </div>
+                <button onClick={() => { navigate('/person/update', { state: person }) }}><img src={edit} alt="Edit Icon" /></button>
+                
+                <button onClick={() => deletePerson(person.idPessoa)}><img src={deleteIcon} alt="Delete Icon" /></button>
               </div>
-            ))}
+            </div>
+          ))}
           <Pagination />
         </div>
       </main>

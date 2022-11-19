@@ -27,7 +27,7 @@ export const AddressProvider = ({ children }: TChildren) => {
       setTotalPages(data.totalPages);
       setAddress(data.content);
     } catch (error) {
-      toast.error("Houve algum erro, tente novamente!", toastConfig);
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }
@@ -40,7 +40,7 @@ export const AddressProvider = ({ children }: TChildren) => {
       const { data } = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
       setAddressFromApi(data);
     } catch (error) {
-      toast.error("Houve algum erro, tente novamente!", toastConfig);
+      console.log(error)
     } finally {
       nProgress.done();
     }
@@ -55,7 +55,7 @@ export const AddressProvider = ({ children }: TChildren) => {
       toast.success("Endereço cadastrado com sucesso!", toastConfig);
       navigate("/address");
     } catch (error) {
-      toast.error("Erro no cadastro, tente novamente!", toastConfig);
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }
@@ -70,7 +70,7 @@ export const AddressProvider = ({ children }: TChildren) => {
       navigate("/address");
       await getAddress("1");
     } catch (error) {
-      toast.error("Houve algum erro, tente novamente!", toastConfig);
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }
@@ -85,7 +85,7 @@ export const AddressProvider = ({ children }: TChildren) => {
       toast.success("Endereço atualizado com sucesso!", toastConfig);
       navigate("/address");
     } catch (error) {
-      toast.error("Houve algum erro, tente novamente!", toastConfig);
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }

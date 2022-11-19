@@ -25,7 +25,7 @@ export const PersonProvider = ({ children }: TChildren) => {
       toast.success("Pessoa cadastrada com sucesso!", toastConfig);
       navigate("/");
     } catch (error) {
-      toast.error("Houve algum erro", toastConfig);
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }
@@ -36,10 +36,10 @@ export const PersonProvider = ({ children }: TChildren) => {
       nProgress.start();
       API.defaults.headers.common["Authorization"] = token;
       await API.delete(`/pessoa/${idPessoa}`);
-      toast.success("Usuário excluído com sucesso!",toastConfig);
+      toast.success("Pessoa excluída com sucesso!",toastConfig);
       navigate("/");
     } catch (error) {
-      toast.error("Houve algum erro, tente novamente!",toastConfig);
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }
@@ -68,7 +68,7 @@ export const PersonProvider = ({ children }: TChildren) => {
       setTotalPages(data.totalPages);
       setPeople(data.content);
     } catch (error) {
-      console.error(error)
+      toast.error('Houve um erro inesperado', toastConfig);
     } finally {
       nProgress.done();
     }

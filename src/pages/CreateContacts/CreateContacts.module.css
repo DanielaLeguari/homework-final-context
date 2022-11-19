@@ -23,7 +23,7 @@ h2 {
   color: red;
 }
 
-.form input {
+.form input, .form select {
   width: 50%;
   padding: 15px 10px;
   border-radius: 5px;

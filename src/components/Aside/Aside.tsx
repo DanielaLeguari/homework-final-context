@@ -5,6 +5,7 @@ import brand from '../../assets/brand.svg'
 import location from '../../assets/location.svg'
 import contact from '../../assets/contact.svg'
 import user from '../../assets/user-icon.svg'
+import logout from '../../assets/logout-icon.svg'
 
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
@@ -26,14 +27,15 @@ const Aside = () => {
             <Link to={'/dashboard'}><span>Dashboard</span></Link>
           </div>
           <div>
-            <img src={location} alt="Icon Search" />
+            <img src={location} alt="Icon Location" />
             <Link to={'/address'}><span>Endereços</span></Link>
           </div>
           <div>
-            <img src={contact} alt="Icon Search" />
+            <img src={contact} alt="Icon Contact" />
             <Link to={'/contacts'}><span>Contatos</span></Link>
           </div>
           <div>
+            <img src={logout} alt="Icon Logout" />
             <span onClick={handleUserLogout}>SAIR</span>
           </div>
         </div>

@@ -25,59 +25,59 @@ const UpdateAddress = () => {
       <Aside />
       <form className={styles.form} onSubmit={handleSubmit((data: TAddressData) => updateAddress(data.idEndereco, data))}>
         <div className={styles.container}>
-          <h2>Atualizar Endereço</h2>
+          <h2>Atualizar endereço</h2>
           <input type="hidden" id="idEndereco" defaultValue={state.idEndereco} {...register("idEndereco")} />
 
           <input type="hidden" id="idPessoa" defaultValue={state.idPessoa} {...register("idPessoa")} />
           <div>
-            <label htmlFor="cep"><span>*</span> CEP</label>
+            <label htmlFor="cep"><span>*</span> CEP:</label>
             <InputMask mask="99999-999" type="text" defaultValue={state.cep} id="cep" {...register("cep")} />
-            {errors.cep && <p>{errors.cep.message}</p>}
+            {errors.cep && <span>{errors.cep.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="tipo"><span>*</span> Tipo do endereço</label>
+            <label htmlFor="tipo"><span>*</span> Tipo do endereço:</label>
             <select id="tipo" defaultValue={state.tipo} {...register("tipo")}>
               <option value="RESIDENCIAL">Residencial</option>
               <option value="COMERCIAL">Comercial</option>
             </select>
-            {errors.tipo && <p>{errors.tipo.message}</p>}
+            {errors.tipo && <span>{errors.tipo.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="logradouro"><span>*</span> Logradouro</label>
+            <label htmlFor="logradouro"><span>*</span> Logradouro:</label>
             <input type="text" defaultValue={state.logradouro} id="logradouro" {...register("logradouro")} />
-            {errors.logradouro && <p>{errors.logradouro.message}</p>}
+            {errors.logradouro && <span>{errors.logradouro.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="numero"><span>*</span> Número</label>
+            <label htmlFor="numero"><span>*</span> Número:</label>
             <input type="number" defaultValue={state.numero} id="numero" {...register("numero")} />
-            {errors.numero && <p>{errors.numero.message}</p>}
+            {errors.numero && <span>{errors.numero.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="complemento"><span>*</span> Complemento</label>
+            <label htmlFor="complemento"><span>*</span> Complemento:</label>
             <input type="text" defaultValue={state.complemento} id="complemento" {...register("complemento")} />
-            {errors.complemento && <p>{errors.complemento.message}</p>}
+            {errors.complemento && <span>{errors.complemento.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="cidade"><span>*</span> Cidade</label>
+            <label htmlFor="cidade"><span>*</span> Cidade:</label>
             <input type="text" defaultValue={state.cidade} id="cidade" {...register("cidade")} />
-            {errors.cidade && <p>{errors.cidade.message}</p>}
+            {errors.cidade && <span>{errors.cidade.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="estado"><span>*</span> Estado</label>
+            <label htmlFor="estado"><span>*</span> Estado:</label>
             <input type="text" defaultValue={state.estado} id="estado" {...register("estado")} />
-            {errors.estado && <p>{errors.estado.message}</p>}
+            {errors.estado && <span>{errors.estado.message}</span>}
           </div>
 
           <div>
-            <label htmlFor="pais"><span>*</span> País</label>
+            <label htmlFor="pais"><span>*</span> País:</label>
             <input type="text" id="pais" defaultValue='Brasil' {...register("pais")} />
-            {errors.pais && <p>{errors.pais.message}</p>}
+            {errors.pais && <span>{errors.pais.message}</span>}
           </div>
 
           <input type="submit" value="Atualizar" />

@@ -23,7 +23,7 @@ export const AddressPagination = () => {
   }, [pageNumber]);
 
   return (
-    <div>
+    <div className={styles.container}>
       {pages.map((item) => (
         <Link className={styles.link} key={item} to={`/address?page=${item}`}>{item}</Link>
       ))}

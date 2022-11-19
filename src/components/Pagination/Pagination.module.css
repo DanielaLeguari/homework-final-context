@@ -1,3 +1,29 @@
+.container {
+  width: 100%;
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 10px;
+}
+
 .link {
-  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27.25px;
+  background-color: #2A3042;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 3px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.8;
+  transition: 0.3s;
 }

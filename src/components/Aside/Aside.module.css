@@ -38,12 +38,17 @@ a {
   transition: 0.3s;
 }
 
+.info div:last-child {
+  margin-top: 30px;
+}
+
 .info div > span:last-child {
   color: red;
   cursor: pointer;
+  font-weight: 700;
 }
 
-.info div > a > span:hover {
+.info div > a > span:hover, .info div > span:last-child:hover {
   cursor: pointer;
   opacity: 0.8;
   transition: 0.3s;

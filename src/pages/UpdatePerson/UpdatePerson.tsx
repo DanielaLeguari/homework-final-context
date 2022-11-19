@@ -47,7 +47,7 @@ const UpdatePerson = () => {
             {errors.email && <span>{errors.email.message}</span>}
           </div>
 
-          <input type="submit" value='Editar' />
+          <input type="submit" value='Atualizar' />
         </div>
       </form>
     </>

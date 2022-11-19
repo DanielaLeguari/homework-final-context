@@ -22,7 +22,7 @@ export const Pagination = () => {
   }, [pageNumber]);
 
   return (
-    <div>
+    <div className={styles.container}>
       {pages.map((item) => (
         <Link className={styles.link} key={item} to={`/dashboard?page=${item}`}>{item}</Link>
       ))}

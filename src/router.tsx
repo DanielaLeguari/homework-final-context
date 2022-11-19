@@ -1,27 +1,28 @@
-import { useContext } from 'react'
-import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom'
+import { useContext } from 'react';
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
-import Dashboard from './pages/Dashboard/Dashboard'
-import CreatePerson from './pages/CreatePerson/CreatePerson'
+import Dashboard from './pages/Dashboard/Dashboard';
+import CreatePerson from './pages/CreatePerson/CreatePerson';
+import Address from './pages/Address/Address';
+import Contacts from './pages/Contacts/Contacts';
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignUp/SignUp';
+import UpdatePerson from './pages/UpdatePerson/UpdatePerson';
+import CreateAddress from './pages/CreateAddress/CreateAddress';
+import UpdateAddress from './pages/UpdateAddress/UpdateAddress';
+import CreateContacts from './pages/CreateContacts/CreateContacts';
+import UpdateContacts from './pages/UpdateContacts/UpdateContacts';
+import NotFound from './pages/NotFound/NotFound';
 
-import { AuthProvider, AuthContext } from './context/AuthContext'
-import { PersonProvider } from './context/PersonContext'
+import { AuthProvider, AuthContext } from './context/AuthContext';
+import { PersonProvider } from './context/PersonContext';
 
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'nprogress/nprogress.css';
 
-import Address from './pages/Address/Address'
-import Contacts from './pages/Contacts/Contacts'
-import SignIn from './pages/SignIn/SignIn'
-import SignUp from './pages/SignUp/SignUp'
-import UpdatePerson from './pages/UpdatePerson/UpdatePerson'
-import CreateAddress from './pages/CreateAddress/CreateAddress'
-import UpdateAddress from './pages/UpdateAddress/UpdateAddress'
-import CreateContacts from './pages/CreateContacts/CreateContacts'
-import UpdateContacts from './pages/UpdateContacts/UpdateContacts'
-import { AddressProvider } from './context/AddressContext'
-import { ContactsProvider } from './context/ContactContext'
+import { AddressProvider } from './context/AddressContext';
+import { ContactsProvider } from './context/ContactContext';
 
 export const PrivateRoute = () => {
   const { token } = useContext(AuthContext);
@@ -52,6 +53,8 @@ export const Router = () => {
                 <Route path='/contacts' element={<Contacts />} />
                 <Route path='/contact/create' element={<CreateContacts />} />
                 <Route path='/contact/update' element={<UpdateContacts />} />
+
+                <Route path='*' element={<NotFound />} />
               </Route>
             </Routes>
           </ContactsProvider>  
