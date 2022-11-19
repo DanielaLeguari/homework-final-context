@@ -15,6 +15,8 @@ import { AddressPagination } from '../../components/AddressPagination/AddressPag
 const Address = () => {
   const navigate = useNavigate()
   const { addressList } = useContext(AddressContext)
+  const { deleteAddress } = useContext(AddressContext)
+
 
   return (
     <>
@@ -24,22 +26,24 @@ const Address = () => {
         <div className={styles.container}>
           <Header />
           {addressList.map((actualAddress) => (
-              <div key={actualAddress.idPessoa} className={styles.content}>
-                <span>{actualAddress.tipo}</span>
-                <span>{actualAddress.logradouro}</span>
-                <span>{actualAddress.numero}</span>
-                <span>{actualAddress.complemento}</span>
-                <span>{actualAddress.cep}</span>
-                <span>{actualAddress.cidade}</span>
-                <span>{actualAddress.estado}</span>
-                <span>{actualAddress.pais}</span>
-                <div>
-                  <button onClick={() => { navigate('/address/update', { state: actualAddress }) }}><img src={edit} alt="Edit Icon" /></button>
-                  
-                  <button><img src={deleteIcon} alt="Delete Icon" /></button>
-                </div>
+            <div key={actualAddress.idPessoa} className={styles.content}>
+              <span>{actualAddress.tipo}</span>
+              <span>{actualAddress.logradouro}</span>
+              <span>{actualAddress.numero}</span>
+              <span>{actualAddress.complemento}</span>
+              <span>{actualAddress.cep.replace(/\D/g, '')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{3})\d+?$/, '$1')}</span>
+              <span>{actualAddress.cidade}</span>
+              <span>{actualAddress.estado}</span>
+              <span>{actualAddress.pais}</span>
+              <div>
+                <button onClick={() => { navigate('/address/update', { state: actualAddress }) }}><img src={edit} alt="Edit Icon" /></button>
+
+                <button onClick={() => deleteAddress(actualAddress.idEndereco)}><img src={deleteIcon} alt="Delete Icon" /></button>
               </div>
-            ))}
+            </div>
+          ))}
           <AddressPagination />
         </div>
       </main>

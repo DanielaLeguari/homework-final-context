@@ -41,11 +41,17 @@ export interface TPeopleData extends TPeople {
 // Tipos Address Context
 export type TAddressContext = {
   getAddress: (page: string) => Promise<void>,
+  createAddress: (data: TAddress) => Promise<void>,
+  deleteAddress: (idEndereco: number) => Promise<void>,
+  updateAddress: (idEndereco:number, data: TAddress) => Promise<void>,
+  getAddressByCep: (cep: string) => Promise<void>,
+  addressFromApi: Record<string, string>,
   addressList: TAddressData[],
   totalPages: number
 }
 
 export type TAddress = {
+ idPessoa: number,
   tipo: string,
   logradouro: string,
   numero: number,
@@ -57,5 +63,5 @@ export type TAddress = {
 }
 
 export interface TAddressData extends TAddress {
-  idPessoa: number
+  idEndereco: number
 }
