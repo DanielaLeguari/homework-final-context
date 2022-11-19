@@ -39,8 +39,8 @@ export const AddressProvider = ({ children }: TChildren) => {
       nProgress.start();
       cep = cep.replace(/[^\d]/g, '');
       const { data } = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-      console.log(data);
       setAddressFromApi(data);
+      console.log(addressFromApi);
     } catch (error) {
       console.error(error);
     } finally {
@@ -56,10 +56,10 @@ export const AddressProvider = ({ children }: TChildren) => {
       data.cep = data.cep.replace(/[^\d]/g, '');
       console.log(data);
       API.defaults.headers.common["Authorization"] = token;
-      await API.post(`/endereco/${data.idPessoa}`, data);
+      await API.post(`/endereco/${data.idPessoa}?idPessoa=${data.idPessoa}`, data); 
+      toast.success("Endereço cadastrado com sucesso!", toastConfig);
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
       toast.error("Erro no cadastro, tente novamente!", toastConfig);
     } finally {
       nProgress.done();

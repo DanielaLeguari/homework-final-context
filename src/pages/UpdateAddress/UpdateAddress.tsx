@@ -21,12 +21,6 @@ const UpdateAddress = () => {
   const { updateAddress, getAddressByCep, addressFromApi } = useContext(AddressContext);
   const cep = watch("cep");
 
-  useEffect(() => {
-    setValue("logradouro", addressFromApi?.logradouro);
-    setValue("cidade", addressFromApi?.localidade);
-    setValue("estado", addressFromApi?.uf)
-  }, [addressFromApi]);
-
   return (
     <>
       <Aside />
