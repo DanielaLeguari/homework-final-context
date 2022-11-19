@@ -21,7 +21,7 @@ export type TAuthContext = {
 export type TPeopleContext = {
   createPerson: (people: TPeople) => Promise<void>,
   deletePerson: (idPessoa: number) => Promise<void>,
-  updatePerson: (id: number, people: TPeople) => Promise<void>
+  updatePerson: (id: number, people: TPeople) => Promise<void>,
   getPerson: (page: string) => Promise<void>,
   people: TPeopleData[],
   totalPages: number
@@ -63,5 +63,27 @@ export type TAddress = {
 }
 
 export interface TAddressData extends TAddress {
-  idEndereco: number
+  idPessoa: number
+}
+
+// Tipos Contacts Context
+
+export type TContactsContext = {
+  getContacts: () => Promise<void>,
+  createContact: (contact: TContacts, status: number) => Promise<void>,
+  deleteContact: (idContato: number) => Promise<void>,
+  updateContact: (idContato: number, people: TContacts) => Promise<void>,
+  contactsList: TContactsData[],
+  totalPages: number
+}
+
+export type TContacts = {
+  idPessoa: number
+  tipoContato: string,
+  telefone: string,
+  descricao: string,
+}
+
+export interface TContactsData extends TContacts {
+  idContato: number
 }
