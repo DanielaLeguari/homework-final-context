@@ -9,7 +9,6 @@ import styles from './Contacts.module.css';
 import Header from './Header/Header';
 import Aside from '../../components/Aside/Aside';
 
-
 const Contacts = () => {
   const navigate = useNavigate();
   const { contactsList, getContacts, deleteContact } = useContext(ContactsContext);
@@ -18,14 +17,14 @@ const Contacts = () => {
     getContacts();
   }, [])
 
-
   return (
-    <><Aside />
-    <main>
-      <h1>Lista de endereços</h1>
-      <div className={styles.container}>
-        <Header />
-        {contactsList.map((contact) => (
+    <>
+      <Aside />
+      <main>
+        <h1>Lista de contatos</h1>
+        <div className={styles.container}>
+          <Header />
+          {contactsList.map((contact) => (
             <div key={contact.idPessoa} className={styles.content}>
               <span>{contact.tipoContato}</span>
               <span>{contact.telefone}</span>
@@ -37,8 +36,8 @@ const Contacts = () => {
               </div>
             </div>
           ))}
-      </div>
-    </main>
+        </div>
+      </main>
     </>
   )
 }

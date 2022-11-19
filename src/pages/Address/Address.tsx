@@ -33,7 +33,8 @@ const Address = () => {
               <span>{actualAddress.complemento}</span>
               <span>{actualAddress.cep.replace(/\D/g, '')
                 .replace(/(\d{5})(\d)/, '$1-$2')
-                .replace(/(-\d{3})\d+?$/, '$1')}</span>
+                .replace(/(-\d{3})\d+?$/, '$1')}
+              </span>
               <span>{actualAddress.cidade}</span>
               <span>{actualAddress.estado}</span>
               <span>{actualAddress.pais}</span>

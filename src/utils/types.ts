@@ -51,7 +51,7 @@ export type TAddressContext = {
 }
 
 export type TAddress = {
- idPessoa: number,
+  idPessoa: number,
   tipo: string,
   logradouro: string,
   numero: number,
@@ -63,18 +63,17 @@ export type TAddress = {
 }
 
 export interface TAddressData extends TAddress {
+  idEndereco: number,
   idPessoa: number
 }
 
 // Tipos Contacts Context
-
 export type TContactsContext = {
   getContacts: () => Promise<void>,
   createContact: (contact: TContacts, status: number) => Promise<void>,
   deleteContact: (idContato: number) => Promise<void>,
   updateContact: (idContato: number, people: TContacts) => Promise<void>,
-  contactsList: TContactsData[],
-  totalPages: number
+  contactsList: TContactsData[]
 }
 
 export type TContacts = {
