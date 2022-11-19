@@ -27,38 +27,33 @@ export const AddressProvider = ({ children }: TChildren) => {
       setTotalPages(data.totalPages);
       setAddress(data.content);
     } catch (error) {
-      console.log(error);
+      toast.error("Houve algum erro, tente novamente!", toastConfig);
     } finally {
       nProgress.done();
     }
   };
 
-  //get Viacep
   const getAddressByCep = async (cep: string) => {
     try {
       nProgress.start();
       cep = cep.replace(/[^\d]/g, '');
       const { data } = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
       setAddressFromApi(data);
-      console.log(addressFromApi);
     } catch (error) {
-      console.error(error);
+      toast.error("Houve algum erro, tente novamente!", toastConfig);
     } finally {
       nProgress.done();
     }
   }
 
-  //Post
   const createAddress = async (data: TAddress) => {
     try {
       nProgress.start();
-
       data.cep = data.cep.replace(/[^\d]/g, '');
-      console.log(data);
       API.defaults.headers.common["Authorization"] = token;
       await API.post(`/endereco/${data.idPessoa}?idPessoa=${data.idPessoa}`, data); 
       toast.success("Endereço cadastrado com sucesso!", toastConfig);
-      navigate("/dashboard");
+      navigate("/address");
     } catch (error) {
       toast.error("Erro no cadastro, tente novamente!", toastConfig);
     } finally {
@@ -66,7 +61,6 @@ export const AddressProvider = ({ children }: TChildren) => {
     }
   }
 
-  //delete
   const deleteAddress = async (idEndereco: number) => {
     try {
       nProgress.start();
@@ -82,18 +76,15 @@ export const AddressProvider = ({ children }: TChildren) => {
     }
   }
 
-  //put
   const updateAddress = async (idEndereco: number, data: TAddress) => {
     try {
       nProgress.start();
       data.cep = data.cep.replace(/[^\d]/g, '');
-      console.log(data);
       API.defaults.headers.common["Authorization"] = token;
       await API.put(`/endereco/${idEndereco}`, data);
       toast.success("Endereço atualizado com sucesso!", toastConfig);
       navigate("/address");
     } catch (error) {
-      console.log(error);
       toast.error("Houve algum erro, tente novamente!", toastConfig);
     } finally {
       nProgress.done();

@@ -26,7 +26,10 @@ const UpdateContacts = () => {
 
         <div>
           <label htmlFor="tipoContato"><span>*</span> Tipo do Contato:</label>
-          <input type="text" defaultValue={state.tipoContato} id="tipoContato" {...register("tipoContato")} />
+          <select defaultValue={state.tipoContato} id="tipoContato" {...register("tipoContato")}>
+            <option value="RESIDENCIAL">Residencial</option>
+            <option value="COMERCIAL">Comercial</option>
+          </select>
           {errors.tipoContato && <span>{errors.tipoContato.message}</span>}
         </div>
 

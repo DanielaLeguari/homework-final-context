@@ -2,7 +2,7 @@ import Aside from '../../components/Aside/Aside';
 import styles from './UpdateAddress.module.css';
 
 import { useForm } from "react-hook-form";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addressFormSchema } from "../../utils/schemas";
@@ -15,11 +15,10 @@ import { useLocation } from 'react-router-dom';
 
 const UpdateAddress = () => {
   const { state } = useLocation();
-  const { register, watch, setValue, handleSubmit, formState: { errors } } = useForm<TAddressData>({
+  const { register, handleSubmit, formState: { errors } } = useForm<TAddressData>({
     resolver: yupResolver(addressFormSchema)
   });
-  const { updateAddress, getAddressByCep, addressFromApi } = useContext(AddressContext);
-  const cep = watch("cep");
+  const { updateAddress } = useContext(AddressContext);
 
   return (
     <>
@@ -32,7 +31,7 @@ const UpdateAddress = () => {
           <input type="hidden" id="idPessoa" defaultValue={state.idPessoa} {...register("idPessoa")} />
           <div>
             <label htmlFor="cep"><span>*</span> CEP</label>
-            <InputMask mask="99999-999" type="text" defaultValue={state.cep} id="cep" {...register("cep")} onBlur={() => getAddressByCep(cep)} />
+            <InputMask mask="99999-999" type="text" defaultValue={state.cep} id="cep" {...register("cep")} />
             {errors.cep && <p>{errors.cep.message}</p>}
           </div>
 
@@ -77,16 +76,14 @@ const UpdateAddress = () => {
 
           <div>
             <label htmlFor="pais"><span>*</span> País</label>
-            <input type="text" id="pais" defaultValue="pais" {...register("pais")} />
+            <input type="text" id="pais" defaultValue='Brasil' {...register("pais")} />
             {errors.pais && <p>{errors.pais.message}</p>}
           </div>
 
-          <input type="submit" value="Atualizar dados" />
+          <input type="submit" value="Atualizar" />
         </div>
       </form>
     </>
-
-
   )
 }
 
