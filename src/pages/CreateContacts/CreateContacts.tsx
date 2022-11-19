@@ -8,6 +8,7 @@ import { contactsFormSchema } from "../../utils/schemas";
 import InputMask from "react-input-mask";
 import Aside from '../../components/Aside/Aside';
 import { ContactsContext } from '../../context/ContactContext';
+import { useLocation } from 'react-router-dom';
 
 
 const CreateContacts = () => {
@@ -15,12 +16,15 @@ const CreateContacts = () => {
     resolver: yupResolver(contactsFormSchema)
   });
 
+  const { state } = useLocation();
+  console.log(state);
+
   const { createContact } = useContext(ContactsContext);
 
   return (
     <>
     <Aside />
-    <form className={styles.form} onSubmit={handleSubmit((data: TContacts) => createContact(data))}>
+    <form className={styles.form} onSubmit={handleSubmit((data: TContacts) => createContact(data, state))}>
       <div className={styles.container}>
       <h2>Cadastrar novo Contato</h2>
 

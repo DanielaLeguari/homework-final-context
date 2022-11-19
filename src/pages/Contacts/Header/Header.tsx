@@ -6,7 +6,6 @@ const Header = () => {
     <>
       <div className={styles.header}>
         <h2>Contatos</h2>
-        <Link to={'/contact/create'}><button>Adicionar Contato</button></Link>
       </div>
       <div className={styles.roles}>
         <span>Tipo</span>

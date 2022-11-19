@@ -32,12 +32,13 @@ export const ContactsProvider = ({ children }: TChildren) => {
     }
   };
 
-  const createContact = async (contact: TContacts) => { //NÃO ESTÁ FUNCIONANDO
+  const createContact = async (contact: TContacts, status: number) => { //NÃO ESTÁ FUNCIONANDO
     try {
       nProgress.start();
       API.defaults.headers.common["Authorization"] = token;
       contact.tipoContato = contact.tipoContato.toUpperCase();
-      contact.idPessoa = 7035;
+      contact.idPessoa = status;
+      console.log(contact)
       await API.post("/contato", contact.idPessoa);
       toast.success("Pessoa cadastrada com sucesso!", toastConfig);
       navigate("/contacts");

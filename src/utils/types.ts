@@ -64,7 +64,7 @@ export interface TAddressData extends TAddress {
 
 export type TContactsContext = {
   getContacts: () => Promise<void>,
-  createContact: (contact: TContacts) => Promise<void>,
+  createContact: (contact: TContacts, status: number) => Promise<void>,
   deleteContact: (idContato: number) => Promise<void>,
   updateContact: (idContato: number, people: TContacts) => Promise<void>,
   contactsList: TContactsData[],
